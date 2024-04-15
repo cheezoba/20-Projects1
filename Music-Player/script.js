@@ -45,7 +45,7 @@ let isPlaying = false;
 function playSong() {
   isPlaying = true;
   playPauseBtn.classList.replace('fa-play', 'fa-pause');
-  playPauseBtn.setAttribute('title', 'Pause')
+  playPauseBtn.setAttribute('title', 'Pause');
   music.play();
 }
 
@@ -102,8 +102,7 @@ function updateProgressBar(bar){
     // const currentTime = this.currentTime;
 
     // update progress bar width
-    const progressPercent = (currentTime / duration) * 100;
-    progress.style.width = `${progressPercent}%`;
+    progress.style.width = `${(currentTime / duration) * 100}%`
 
     // Calculate display for duration
     const durationMinutes = Math.floor(duration/60);
@@ -127,9 +126,9 @@ function updateProgressBar(bar){
 }
 
 // Set progress bar
-function setProgressBar(bar){
+function setProgressBar(c){
   const width = this.clientWidth;
-  const clickX = bar.offsetX;
+  const clickX = c.offsetX;
   const {duration} = music;
   music.currentTime = (clickX / width) * duration;
 }
